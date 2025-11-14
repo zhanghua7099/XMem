@@ -115,7 +115,7 @@ class ResourceManager:
                 new_h = (h*self.size//min(w, h))
                 if new_w != w or new_h != h:
                     frame = cv2.resize(frame,dsize=(new_w,new_h),interpolation=cv2.INTER_AREA)
-            cv2.imwrite(path.join(self.image_dir, f'{frame_index:07d}.jpg'), frame)
+            cv2.imwrite(path.join(self.image_dir, f'{frame_index:07d}.png'), frame)
             frame_index += 1
             bar.update(frame_index)
         bar.finish()
@@ -158,13 +158,13 @@ class ResourceManager:
             self.visualization_init = True
 
         image = Image.fromarray(image)
-        image.save(path.join(self.visualization_dir, self.names[ti]+'.jpg'))
+        image.save(path.join(self.visualization_dir, self.names[ti]+'.png'))
 
     def _get_image_unbuffered(self, ti):
         # returns H*W*3 uint8 array
         assert 0 <= ti < self.length
 
-        image = Image.open(path.join(self.image_dir, self.names[ti]+'.jpg'))
+        image = Image.open(path.join(self.image_dir, self.names[ti]+'.png'))
         image = np.array(image)
         return image
 
