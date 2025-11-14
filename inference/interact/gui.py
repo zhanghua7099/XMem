@@ -140,7 +140,7 @@ class App(QWidget):
         self.save_visualization_checkbox = QCheckBox(self)
         self.save_visualization_checkbox.toggled.connect(self.on_save_visualization_toggle)
         self.save_visualization_checkbox.setChecked(False)
-        self.save_visualization = False
+        self.save_visualization = False    # Set this True will be slow. 
 
         # Radio buttons for type of interactions
         self.curr_interaction = 'Click'
