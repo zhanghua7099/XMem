@@ -1,3 +1,23 @@
+## Usage
+
+### Install required packages
+```
+pip install -r requirements.txt
+pip install scipy Cython PySide6 opencv-python
+```
+
+### Download pre-trained model
+```
+bash scripts/download_models_demo.sh
+```
+
+### Run the interactive GUI
+```
+python3 interactive_demo.py --images ${repo_path}/demo_data/rgb/
+```
+1. Click the object to generate the first mask.
+2. Click **Forward Propagate** button
+
 # XMem: Long-Term Video Object Segmentation with an Atkinson-Shiffrin Memory Model
 
 ## New VOS project: Putting the Object Back into Video Object Segmentation: https://github.com/hkchengrex/Cutie
